@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -28,6 +27,17 @@ public class DescendingOrder {
       newNumber = newNumber.concat(digit.toString());
     }
     return Integer.parseInt(newNumber);
+
+//    return Integer.parseInt(String.valueOf(num)
+//            .chars()
+//            .mapToObj(i -> String.valueOf(Character.getNumericValue(i)))
+//            .sorted(Comparator.reverseOrder())
+//            .collect(Collectors.joining()));
+
+    // // The best solution
+//    String[] array = String.valueOf(num).split("");
+//    Arrays.sort(array, Collections.reverseOrder());
+//    return Integer.valueOf(String.join("", array));
   }
 
   @Test
